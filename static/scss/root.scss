@@ -1,0 +1,22 @@
+:root {
+	--color: #2F1B15;
+	--accent1: #3F241E; // border-color
+	--accent2: #ffcf70; // selection
+
+	// --accent3: #FFBA31;
+	--accent4: #231F20; // input value
+	--accent5: #C2FF61;
+
+
+   //background
+	--fill: transparent;
+	--fill1: #DFC79B; //песочно-желтый
+
+	// link
+	--link_color: #1F5F97;
+	--link_border_color: #1F5F97;
+	--link_hover_color: red;
+	--link_hover_border-color: red;
+	--link_visited_color: var(--link_color);
+	--link_visited_border-color: var(--link_color);
+}

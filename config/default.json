@@ -1,0 +1,4 @@
+{
+   "PORT": 5000,
+   "mongoURI": "mongodb+srv://bl:bl123@devconnector-xoxlp.mongodb.net/test?retryWrites=true&w=majority"
+}
