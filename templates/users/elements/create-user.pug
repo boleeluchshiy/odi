@@ -1,0 +1,16 @@
+form.form.create-user(method='POST')
+   if errors
+      ul.ul.errors
+         for error in errors
+            li.li.error= error.msg
+
+   label.label(for='username') Имя пользователя
+   input.input.required(name='username', value='')
+
+   label.label(for='email') Почта
+   input.input.required(name='email', value='')
+
+   label.label(for='password') Пароль
+   input.input.required(name='password', value='')
+
+   button.button(type='submit') Создать

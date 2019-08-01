@@ -1,7 +1,6 @@
 exports.index = (req, res) => {
-   console.log('\n', `🙋  > req.method: `, req.method)
    const content = {
-      title: 'Amin panel',
+      title: 'Админище',
    }
 
    return res.render('index', content)
@@ -9,7 +8,7 @@ exports.index = (req, res) => {
 
 exports.panel = (req, res) => {
    const content = {
-      title: 'Panel',
+      title: 'Панель админа',
    }
 
    return res.render('index', content)

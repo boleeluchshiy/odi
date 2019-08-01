@@ -10,8 +10,10 @@ const server = express()
 server.locals.basedir = path.join(__dirname, 'templates')
 
 // middleware
-server.use(express.json({ extended: false }))
+server.use(express.json())
 server.use(express.urlencoded({ extended: false }))
+
+// server.use(express.session())
 
 // engines
 server.set('view engine', 'pug')
@@ -28,8 +30,5 @@ server.use('/', require('./urls'))
 
 const PORT = process.env.PORT || config.get('PORT')
 server.listen(PORT, () => {
-   return console.log(
-      '\n',
-      `🙋  > Сервер запущен: http://localhost:${PORT}`,
-   )
+   return console.log('\n', `🙋  > Сервер запущен: http://localhost:${PORT}`)
 })

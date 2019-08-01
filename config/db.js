@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 
 module.exports = function connectDB() {
    try {
-      mongoose.connect(db, {})
+      mongoose.connect(db, { useNewUrlParser: true })
       console.log('\n', `🙋  > MongoDB подключена.`)
    } catch (err) {
       console.log(
