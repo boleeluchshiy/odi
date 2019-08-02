@@ -5,14 +5,16 @@ const LocalStrategy = require('passport-local').Strategy
 const bcryptjs = require('bcryptjs')
 
 module.exports = function(passport) {
-   // prettier-ignore
-   passport.use(new LocalStrategy({ usernameField: 'email' },
+   passport.use(
+      new LocalStrategy(
+         { usernameField: 'email' },
          async (email, password, done) => {
             try {
                let user = await User.findOne({ email })
 
                //существует ли пользователь
-               if (!user) return done(null, false, {
+               if (!user)
+                  return done(null, false, {
                      message: 'Пользователя не существует.',
                   })
 
@@ -22,7 +24,8 @@ module.exports = function(passport) {
                   user.password,
                )
 
-               if (!isPasswordMatch) return done(null, false, {
+               if (!isPasswordMatch)
+                  return done(null, false, {
                      message: 'Неверный пароль.',
                   })
 

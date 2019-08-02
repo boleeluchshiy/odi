@@ -20,12 +20,15 @@ server.use(
    }),
 )
 
-// passport
+//  passport
 const passport = require('passport')
-const passportLocal = require('./config/passport/local')(passport)
-
 server.use(passport.initialize())
 server.use(passport.session())
+
+//local
+const localStrategy = require('./config/passport/local')(passport)
+//google
+const googleStrategy = require('./config/passport/google')(passport)
 
 // flash
 const flash = require('connect-flash')

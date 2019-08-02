@@ -6,18 +6,37 @@ const UserSchema = new mongoose.Schema({
       unique: true,
       required: true,
    },
+
    email: {
       type: String,
       unique: true,
       required: true,
    },
-   password: {
-      type: String,
-   },
+
+   password: String,
+
    dateCreated: {
       type: Date,
       default: Date.now,
    },
+
+   givenName: String,
+   familyName: String,
+
+   //membership
+   googleId: {
+      type: String,
+   },
+
+   // facebookId: {
+   //    type: String,
+   //    unique: true,
+   // },
+
+   // vkId: {
+   //    type: String,
+   //    unique: true,
+   // },
 })
 
 exports.User = mongoose.model('user', UserSchema)

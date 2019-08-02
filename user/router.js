@@ -10,6 +10,23 @@ const loginRequired = require('./mw/loginRequired')
 
 // urlpatterns
 
+//    авторизация приложений
+const passport = require('passport')
+
+router.get(
+   '/auth/google',
+   passport.authenticate('google', { scope: ['profile', 'email'] }),
+)
+
+router.get(
+   '/auth/google/callback',
+   passport.authenticate('google', { failureRedirect: '/login' }),
+   function(req, res) {
+      // Successful authentication, redirect home.
+      res.redirect('/')
+   },
+)
+
 router.get('/register', controller.register)
 router.post('/register', validateRegister, controller.register__post)
 

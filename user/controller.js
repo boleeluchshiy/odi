@@ -17,8 +17,6 @@ exports.register__post = async function(req, res) {
    const details = { username, email, password }
    const content = { details }
 
-   console.log(`\n🙋  > controller`)
-
    try {
       const user = User({ username, email, password })
 
@@ -28,13 +26,13 @@ exports.register__post = async function(req, res) {
 
       user.save()
 
-      console.log(`\n🙋  > Логиню`)
-      req.login(user, function(err) {
-         if (err) return next(err)
-
-         return res.redirect('/user/dashboard')
+      //Сразу логиним
+      return await req.login(user, err => {
+         if (err) throw err
          // return res.redirect('/users/' + req.user.username)
+         return res.redirect('/user/dashboard')
       })
+      //
    } catch (err) {
       console.log(`\n🐶  > Ошибка сервера: ${err.message}`)
       return res.send('Ошибка сервера')
