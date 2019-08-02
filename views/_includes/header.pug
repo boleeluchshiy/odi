@@ -1,0 +1,29 @@
+include /_mixins/schrodingerLink
+
+header.header
+   .logo.nav-group
+      h1.h1
+         +schrodingerLink('/', 'Проект')
+
+
+   ul.ul.nav-group
+      li.li
+         +schrodingerLink('/about', 'О проекте')
+      li.li
+         +schrodingerLink('/contacts', 'Контактная информация')
+
+
+   ul.ul.nav-group.user
+      if user
+         li.li
+            +schrodingerLink(`/user/${user.username}`, user.username)
+         li.li
+            +schrodingerLink('/user/logout', 'Выйти')
+      else
+         li.li
+            +schrodingerLink('/user/register', 'Зарегестрироваться')
+            |  или 
+            +schrodingerLink('/user/login', 'войти')
+
+
+

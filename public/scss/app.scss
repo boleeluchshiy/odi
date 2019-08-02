@@ -1,0 +1,161 @@
+.body {
+	display: grid;
+	grid-gap: 1em
+}
+
+.header {
+	display: flex;
+	align-items: baseline;
+
+	&>* {
+		margin-right: 2em;
+
+		&:last-child {
+			grid-column-start: -1;
+			margin-right: 0;
+			// float: right;
+		}
+	}
+
+	.logo {
+		margin: 0;
+		margin-right: 1em;
+
+		.h1 {
+			font-size: 2rem;
+		}
+	}
+
+	.ul {
+		display: flex;
+
+		>.li {
+			margin-right: 1em;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	//Корзина
+	.bin {
+		position: relative;
+		z-index: 1;
+
+		.target {
+			position: absolute;
+			content: '';
+			left: -2.9em;
+			top: -4.3em;
+			width: 10em;
+			height: 10em;
+			background: papayawhip;
+			opacity: 0;
+			z-index: -1;
+			transition: all 1s ease-out;
+			border-radius: 10em;
+		}
+
+		&.listening {
+
+			.target {
+				transition: all .2s ease-in;
+				opacity: .6;
+			}
+
+			&.hover {
+				.target {
+					// opacity: .4;
+					background: tomato;
+				}
+			}
+		}
+	}
+}
+
+
+.vjs {
+	display: grid;
+	grid-gap: 2em;
+	grid-template-rows: minmax(1em, 1fr);
+
+	.vj {
+		display: grid;
+		grid-gap: 1em;
+		position: relative;
+		// background: aliceblue;
+		min-height: 2em;
+		transition: all .3s ease-out;
+
+		&::before {
+			position: absolute;
+			content: '';
+			width: calc(100%);
+			height: calc(100%);
+			opacity: .4;
+			z-index: -1;
+		}
+
+		// &:hover {
+		// 	// cursor: pointer;
+
+		// 	&::before {
+		// 		// background: papayawhip;
+		// 		// border: 2px solid tomato;
+		// 	}
+		// }
+
+		&.dragging {
+			position: absolute;
+			z-index: 99;
+			transition: all 0s ease-out;
+		}
+
+		&.avatar {
+			background: bisque;
+		}
+
+		.h3 {
+			display: flex;
+			align-items: baseline;
+			margin-bottom: 0;
+
+			&>* {
+				margin-right: 1em;
+			}
+
+			.button {
+				padding: 0;
+				border: none;
+				font-size: 1rem;
+				font-size: .8rem;
+				font-weight: normal;
+
+				&:hover {
+					transform: none;
+				}
+			}
+		}
+	}
+}
+
+.flash {
+	padding: 1em;
+	opacity: .8;
+	cursor: pointer;
+
+	&:hover {
+		opacity: 1;
+	}
+
+	&.error {
+		background: #ffdfda;
+		color: red;
+	}
+
+	&.success {
+		background: #cbffcb;
+		color: limegreen;
+	}
+}

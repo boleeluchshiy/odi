@@ -1,0 +1,99 @@
+@font-face {
+	font-family: 'Gotham Pro';
+	src: url('/fonts/Gotham/GothamProBla.otf');
+	font-weight: 800;
+}
+
+@font-face {
+	font-family: 'Gotham Pro';
+	src: url('/fonts/Gotham/GothamProReg.otf');
+	font-weight: 400;
+}
+
+::selection {
+	background: var(--accent2);
+}
+
+.html {
+	font-family: 'Gotham Pro', sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 1.4;
+	-webkit-font-smoothing: antialiased;
+}
+
+.body {
+	margin: 1em 5em;
+}
+
+.page {
+	color: var(--color);
+	background-color: var(--fill);
+	margin: 1em auto;
+	display: grid;
+	grid-gap: 1em;
+}
+
+.h1,
+.h2,
+.h3,
+.h4 {
+	font-weight: 800;
+	font-family: 'Gotham Pro', serif;
+}
+
+.h1 {
+	font-size: 3.2rem;
+	line-height: 1.25;
+	margin-bottom: 2em;
+}
+
+.h2 {
+	font-size: 1.6rem;
+	line-height: 1.4;
+	margin-bottom: 1.4em;
+}
+
+.h3 {
+	font-size: 1.2rem;
+	line-height: 1.4;
+	margin-bottom: 1.5em;
+}
+
+.h4 {
+	font-size: 1.18;
+	line-height: 1.35;
+	margin-bottom: 1em;
+}
+
+p,
+.p {
+	// margin-bottom: 1em;
+	line-height: 1.4;
+}
+
+.a {
+	color: var(--link_color);
+	border-bottom: 1px solid var(--link_border_color);
+	text-decoration: none;
+	padding-bottom: 2px;
+
+	&:hover {
+		color: var(--link_hover_color);
+		border-color: var(--link_hover_border-color);
+	}
+
+	&:visited {
+		color: var(--link_visited_color);
+		border-color: var(--link_visited_border-color);
+	}
+}
+
+.list {
+	padding-left: 3em;
+	list-style: none;
+
+	.list__item {
+		position: relative;
+	}
+}

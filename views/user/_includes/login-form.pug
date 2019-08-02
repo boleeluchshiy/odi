@@ -1,0 +1,23 @@
+form.form.login-form(method="POST")
+
+   .input-field
+      label.label(for="email") Email
+      input.input(name="email", value= details ? details.email : null)
+
+      if errors && errors.length
+         ul.ul.errors
+            each error in errors
+               if error.param === 'email'
+                  li.li.error= error.msg
+
+   .input-field
+      label.label(for="password") Пароль
+      input.input(name="password", type="password")
+
+      if errors && errors.length
+         ul.ul.errors
+            each error in errors
+               if error.param === 'password'
+                  li.li.error= error.msg
+
+   button.button(type="submit") Войти

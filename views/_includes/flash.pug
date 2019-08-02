@@ -1,0 +1,16 @@
+if success_msg && success_msg.length
+   .flash.success= success_msg
+      //- span.close x
+
+if error && error.length
+   .flash.error= error
+
+if error_msg && error_msg.length
+   .flash.error= error_msg
+      //- span.close x
+
+if warning_msg && warning_msg.length
+   .flash.warning= warning_msg
+
+if notification_msg && notification_msg.length
+   .flash.notification= notification_msg

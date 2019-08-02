@@ -1,0 +1,29 @@
+Почитать: https://stackoverflow.com/questions/15601703/difference-between-app-use-and-app-get-in-express-js
+
+Вместо .get или .post можно использовать .use, который точно так же может вызывать view-method...
+
+router.use('/third', views.third)
+
+... и на месте решать, что делать при том или ином запросе
+
+exports.third = (req, res) => {
+   console.log('\n', `🙋  > req.method: `, req.method)
+   if (req.method === 'POST') {
+      res.send('POST')
+   }
+   const content = {
+      title: 'Третья',
+   }
+
+   return res.render('some-app/third', content)
+}
+
+
+В итоге пришел к конструкции, которая что-то напоминает :)
+
+const pattern = (pattern, method) => router.use(pattern, method)
+
+const urlpatterns = [
+   pattern('/', views.index),
+   pattern('/some-app', require('./some-app/urls')),
+]

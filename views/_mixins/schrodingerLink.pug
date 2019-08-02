@@ -1,0 +1,5 @@
+mixin schrodingerLink(link, verboseName)
+   if url === link
+      | #{verboseName}
+   else
+      a.a(href=link)= verboseName

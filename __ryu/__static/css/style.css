@@ -1,0 +1,164 @@
+:root {
+   --code: #f8f8f8;
+   --highlighted: #dedede;
+   --toggler: #aaa;
+   --bg: white;
+   --selection: yellow;
+}
+
+::selection {
+  background: var(--selection);
+}
+
+body, article {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  font-weight: 300;
+  color: #2e2e2e;
+  margin: 3rem;
+
+  transition: all .2s;
+}
+
+.dark-theme {
+   background: #17161d;
+   color: #656575;
+}
+.dark-theme code {
+   background: #202029;
+}
+.dark-theme ::selection {
+   background: #9586a5;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Mirta', serif;
+  font-weight: 100;
+}
+
+h1 {
+   font-size: 103px;
+   font-size: 6.5rem;
+   line-height: 1;
+   margin-top: 9rem;
+   margin-bottom: 10rem;
+}
+
+h2 {
+   font-size: 4.1rem;
+   line-height: 1;
+    margin-bottom: 30px;
+    margin-top: 212px;
+    font-weight: 100;
+    clear: both;
+}
+
+h3 {
+   font-size: 2.3rem;
+   line-height: 1;
+   margin-top: 100px;
+}
+
+h4 {
+   font-size: 1.5rem;
+   line-height: 1.1;
+   margin-top: 3.1rem;
+   margin-bottom: 0.9rem;
+}
+
+h5 {
+   font-size: 23px;
+   font-weight: normal;
+   line-height: 26px;
+   margin-bottom: 20px;
+}
+
+p, ul, ol {
+  margin-bottom: 10px;
+}
+ul, ol {padding-left: 40px;}
+ul {margin-top: 0; list-style: none;}
+li {margin-bottom: 5px;}
+ul.list li::before {content: '— '}
+
+
+
+code {
+   background: var(--code);
+
+   /* overflow: scroll; */
+   display: block;
+   font-size: 0.8rem;
+   line-height: 1.75;
+
+   padding-top: 14px;
+
+   margin: auto;
+   margin-top: 0px;
+   padding-bottom: 14px;
+   margin-bottom: 14px;
+
+   border-radius: 4px;
+}
+   li > code, span > code {margin-top: 14;}
+   code + p, code + code { margin-top: 20px;}
+   li:last-child > code {
+      margin-bottom: 0;
+   }
+
+code pre {
+   font-family: "Monaco";
+   font-family: 'Roboto Mono', monospace;
+
+   /* font-size: 14px; */
+   font-weight: 100;
+   padding-left: 20px;
+
+   display: block;
+   width: 100%;
+}
+
+pre {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ul, ol {
+
+}
+
+a:hover,{
+    color: red;
+    color: black;
+    border-bottom-color: red;
+}
+a.btn { text-decoration: none }
+
+.btn, button {
+   order: none;
+   background: #f5f4f9;
+   font-size: 0.65rem;
+   padding: 4px 7px;
+   cursor: pointer;
+   border: none;
+   border-radius: 2px;
+   outline: none;
+   transition: all .2s;
+}
+
+.dark-theme .btn,
+.dark-theme button {
+   background: #272732;
+   color: #656475;
+}
+
+@media only screen
+and (min-width : 768px)
+and (max-width : 1024px)
+and (-webkit-min-device-pixel-ratio: 2) {
+   body {
+      font-size: 2rem;
+   }
+}
